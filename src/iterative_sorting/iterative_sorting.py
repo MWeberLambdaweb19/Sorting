@@ -1,6 +1,4 @@
 # TO-DO: Complete the selection_sort() function below 
-test_array = [5, 4, 1, 3, 6, 2]
-print('pre sort', test_array)
 def selection_sort( arr ):
     # loop through n-1 elements
     if len(arr) == 0:
@@ -12,24 +10,29 @@ def selection_sort( arr ):
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
 
-        for j in range(i+1, len(arr)):
+        for j in range(cur_index, len(arr)):
             if arr[j] < arr[smallest_index]:
                 smallest_index = j
 
 
         # TO-DO: swap
         arr[i], arr[smallest_index] = arr[smallest_index], arr[i]
+
+        # COULD ALSO DO IT THIS WAY
         # temp = arr[i]
         # arr[i] = arr[smallest_index]
         # arr[smallest_index] = temp
 
     return arr
 
-
-selection_sort(test_array)
-print('post sort', test_array)
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
+    if len(arr) == 0:
+        return arr
+    for i in range(len(arr) -1):
+        for j in range(0, len(arr) - i - 1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
 
     return arr
 
